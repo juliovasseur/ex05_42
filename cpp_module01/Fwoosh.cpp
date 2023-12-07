@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fwoosh.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jules <jules@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/07 01:06:21 by jules             #+#    #+#             */
+/*   Updated: 2023/12/07 01:37:08 by jules            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Fwoosh.hpp"
+
+Fwoosh::Fwoosh()
+{
+    this->name = "Fwoosh";
+    this->effects = "fwooshed";
+}
+
+
+Fwoosh::~Fwoosh() {};
+
+ASpell* Fwoosh::clone() const
+{
+    return new Fwoosh(*this);
+}
+
+
