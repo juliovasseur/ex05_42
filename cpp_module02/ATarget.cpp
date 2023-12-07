@@ -1,39 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ATarget.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jules <jules@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/07 04:00:35 by jules             #+#    #+#             */
+/*   Updated: 2023/12/07 04:49:53 by jules            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ATarget.hpp"
 
-ATarget::ATarget()
-{
-    this->type = "default";
-}
 
-ATarget &ATarget::operator=(const ATarget &src)
+ATarget::ATarget(std::string const &type) : _type(type)
 {
-    if (this != &src)
-    {
-        this->type = src.type;
-    }
-    return *this;
 
 }
 
-ATarget::ATarget(const ATarget &src)
+std::string const & ATarget::getType() const
 {
-    *this = src;
+    return(this->_type);
 }
 
-ATarget::ATarget(std::string const &type)
+void ATarget::getHitBySpell(const ASpell &Spell) const
 {
-    this->type = type;
+    std::cout << this->_type << " has been " << Spell.getEffects() << "!" << std::endl;
 }
-
-ATarget::~ATarget() {};
-
-std::string const &ATarget::getType() const
-{
-    return (this->type);
-}
-
-void ATarget::getHitBySpell(const ASpell &src) const
-{
-    std::cout << this->type << " has been " << src.getEffects() << "!" << std::endl;
-}
-

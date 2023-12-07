@@ -5,55 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jules <jules@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 00:13:26 by jules             #+#    #+#             */
-/*   Updated: 2023/12/07 01:39:11 by jules            ###   ########.fr       */
+/*   Created: 2023/12/07 03:58:38 by jules             #+#    #+#             */
+/*   Updated: 2023/12/07 04:49:52 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ASpell.hpp"
 
+
+ASpell::ASpell(std::string const &name, std::string const &effects) : _name(name), _effects(effects)
+{
+
+}
+
 std::string const & ASpell::getName() const
 {
-    return (this->name);
+    return (this->_name);
 }
 
 std::string const & ASpell::getEffects() const
 {
-    return (this->effects);
+    return (this->_effects);
 }
 
-ASpell::ASpell(std::string const &name, std::string const &effects)
+void ASpell::launch(ATarget const &target) const
 {
-    this->name = name;
-    this->effects = effects;
-}
-
-
-ASpell::ASpell()
-{
-    this->name = "default";
-    this->effects = "default";
-}
-
-ASpell::~ASpell() {}
-
-
-ASpell & ASpell::operator=(const ASpell &src)
-{
-    if (this != &src)
-    {
-        this->name = src.name;
-        this->effects = src.effects;
-    }
-    return *this;
-}
-    
-ASpell::ASpell(const ASpell &src)
-{
-    *this = src;
-}
-
-void ASpell::launch(ATarget const & src) const
-{
-    src.getHitBySpell(*this);
+    target.getHitBySpell(*this);
 }

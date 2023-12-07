@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jules <jules@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 01:06:21 by jules             #+#    #+#             */
-/*   Updated: 2023/12/07 02:06:42 by jules            ###   ########.fr       */
+/*   Created: 2023/12/07 04:10:47 by jules             #+#    #+#             */
+/*   Updated: 2023/12/07 04:49:58 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed")
 {
+
 }
 
+Fwoosh::~Fwoosh()
+{}
 
-Fwoosh::~Fwoosh() {};
-
-ASpell* Fwoosh::clone() const
+ASpell * Fwoosh::clone()
 {
     return new Fwoosh(*this);
 }
-
-

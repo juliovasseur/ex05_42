@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jules <jules@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 23:30:13 by jules             #+#    #+#             */
-/*   Updated: 2023/12/07 00:06:58 by jules            ###   ########.fr       */
+/*   Created: 2023/12/07 03:39:47 by jules             #+#    #+#             */
+/*   Updated: 2023/12/07 03:53:59 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,16 @@ class Warlock
 {
     private :
 
-    std::string const name;
-    std::string title;
+    std::string const _name;
+    std::string _title;
 
-    public :
+    public:
 
     Warlock(std::string const &name, std::string const &title);
     ~Warlock();
     std::string const & getName() const;
     std::string const & getTitle() const;
-    void setTitle(std::string const & title);
+    void setTitle(std::string const &title);
     void introduce() const;
-
 
 };

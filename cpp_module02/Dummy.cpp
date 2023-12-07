@@ -5,23 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jules <jules@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 01:11:01 by jules             #+#    #+#             */
-/*   Updated: 2023/12/07 01:37:15 by jules            ###   ########.fr       */
+/*   Created: 2023/12/07 04:14:09 by jules             #+#    #+#             */
+/*   Updated: 2023/12/07 04:49:55 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dummy.hpp"
 
-Dummy::Dummy()
+Dummy::Dummy() : ATarget("Target Practice Dummy")
 {
-    this->type = "Target Practice Dummy";
+
 }
 
-Dummy::~Dummy() {};
+Dummy::~Dummy()
+{}
 
-ATarget* Dummy::clone() const
+ATarget * Dummy::clone()
 {
     return new Dummy(*this);
 }
-
-

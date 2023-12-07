@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jules <jules@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 02:09:50 by jules             #+#    #+#             */
-/*   Updated: 2023/12/07 02:10:38 by jules            ###   ########.fr       */
+/*   Created: 2023/12/07 05:08:27 by jules             #+#    #+#             */
+/*   Updated: 2023/12/07 05:09:02 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 Polymorph::Polymorph() : ASpell("Polymorph", "turned into a critter")
 {
 
+
 }
 
-Polymorph::~Polymorph() {};
+Polymorph::~Polymorph()
+{
+
+}
 
 
-ASpell* Polymorph::clone() const
+ASpell * Polymorph::clone()
 {
     return new Polymorph(*this);
 }

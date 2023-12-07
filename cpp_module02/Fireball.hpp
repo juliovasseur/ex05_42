@@ -5,17 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jules <jules@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 02:04:01 by jules             #+#    #+#             */
-/*   Updated: 2023/12/07 02:09:06 by jules            ###   ########.fr       */
+/*   Created: 2023/12/07 05:06:32 by jules             #+#    #+#             */
+/*   Updated: 2023/12/07 05:06:38 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ASpell.hpp"
 
-class Fireball : public ASpell 
+class Fireball : public ASpell
 {
     public :
-		Fireball();
-		~Fireball();
-		ASpell* clone() const;
+
+    Fireball();
+    ~Fireball();
+    ASpell * clone();
+
 };

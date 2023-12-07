@@ -5,49 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jules <jules@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 02:14:14 by jules             #+#    #+#             */
-/*   Updated: 2023/12/07 02:23:22 by jules            ###   ########.fr       */
+/*   Created: 2023/12/07 05:15:04 by jules             #+#    #+#             */
+/*   Updated: 2023/12/07 05:59:56 by jules            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SpellBook.hpp"
 
-SpellBook::SpellBook()
-{}
-
-SpellBook::~SpellBook()
-{
-	for (std::map<std::string, ASpell*>::iterator it = _SpellBook.begin(); it != _SpellBook.end(); ++it) {
-		delete it->second;
-	}
-	_SpellBook.clear();
-}
-
-
-void SpellBook::learnSpell(ASpell *spell)
+void SpellBook::learnSpell(ASpell* spell)
 {
     if (spell)
-	{
-		_SpellBook[spell->getName()] = spell->clone();
-	}
+    {
+        this->spell_book[spell->getName()] = spell->clone();
+    }
+}
+
+void SpellBook::forgetSpell(std::string const &spell_name)
+{
+    if (this->spell_book.find(spell_name) != this->spell_book.end())
+    {
+        this->spell_book.erase(this->spell_book.find(spell_name));
+    }
+    
+}
+
+ASpell* SpellBook::createSpell(std::string const &spell_name)
+{
+    ASpell *tmp_spell = NULL;
+    if (this->spell_book.find(spell_name) != this->spell_book.end())
+        tmp_spell = this->spell_book[spell_name];
+    return (tmp_spell);
 }
 
 
-
-void SpellBook::forgetSpell(std::string const & SpellName)
+SpellBook::SpellBook()
+{}
+    
+SpellBook::~SpellBook()
 {
-	std::map<std::string, ASpell*>::iterator it = _SpellBook.find(SpellName);
-	if (it != _SpellBook.end())
-	{
-		delete it->second;
-		_SpellBook.erase(it);
-	}
-}
-
-ASpell* SpellBook::createSpell(std::string const &spell)
-{
-    ASpell* tmp = NULL;
-	if (_SpellBook.find(spell) != _SpellBook.end())
-		tmp = _SpellBook[spell];
-	return (tmp);
 }
